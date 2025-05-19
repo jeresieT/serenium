@@ -56,7 +56,7 @@ session_start();
       <!-- section para mas contenido -->
       <section class="sobre-nosotros">
         <h2>¿Quiénes Somos?</h2>
-        <img src="../../public/img/spa.jpg " alt="">
+        <img src="../../public/img/spa.jpg" alt="Spa Serenium">
         <p>
           En SERENIUM Spa, somos un equipo apasionado por el bienestar. Nuestros
           terapeutas expertos combinan técnicas tradicionales y modernas para
@@ -65,20 +65,30 @@ session_start();
         </p>
       </section>
 
-      <!-- Seccióncontenido -->
-      <section class="sobre-nosotros">
-        <img src="../../public/img/masaje3.jpg " alt="">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto asperiores veritatis vero itaque placeat saepe, consequuntur totam autem a eos modi quibusdam, dolores nulla similique nesciunt et ratione quos ab.
-        </p>
+      <!-- Nueva sección de contenido -->
+      <section class="seccion-info">
+        <div class="contenido-info">
+          <h2>Masajes Terapéuticos</h2>
+          <p>
+            Nuestros masajes terapéuticos combinan diferentes técnicas para aliviar tensiones, 
+            reducir el estrés y mejorar tu bienestar general. Cada sesión está diseñada 
+            para adaptarse a tus necesidades específicas.
+          </p>
+          <img src="../../public/img/masaje3.jpg" alt="Masajes terapéuticos">
+        </div>
       </section>
 
-      <!-- Sección contenido -->
-      <section class="sobre-nosotros">
-        <img src="../../public/img/masaje2.jpg" alt="">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto asperiores veritatis vero itaque placeat saepe, consequuntur totam autem a eos modi quibusdam, dolores nulla similique nesciunt et ratione quos ab.
-        </p>
+      <!-- Nueva sección de contenido invertida -->
+      <section class="seccion-info invertido">
+        <div class="contenido-info">
+          <h2>Experiencia Premium</h2>
+          <p>
+            Disfruta de una experiencia de spa premium en un ambiente diseñado para 
+            tu máxima comodidad y relajación. Nuestras instalaciones y servicios 
+            te transportarán a un oasis de tranquilidad.
+          </p>
+          <img src="../../public/img/masaje2.jpg" alt="Experiencia premium">
+        </div>
       </section>
 
 

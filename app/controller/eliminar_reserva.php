@@ -8,6 +8,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_rol'] !== 'admin') {
     header('Location: ../view/index.php');
     exit;
 }
+
 // Eliminar reserva
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_reserva = $_POST['id_reserva'] ?? null;
