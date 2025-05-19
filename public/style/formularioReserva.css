@@ -1,0 +1,36 @@
+
+
+.formulario-reserva {
+    max-width: 600px;
+    margin: 8rem auto;
+    padding: 2rem;
+    background-color: var(--texto-claro);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(60, 24, 16, 0.1);
+}
+.detalles-paquete {
+    background-color: var(--fondo);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.form-grupo {
+    margin-bottom: 1.5rem;
+}
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+}
+.form-grupo input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-acento);
+    border-radius: 5px;
+}
+
+.boton:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }

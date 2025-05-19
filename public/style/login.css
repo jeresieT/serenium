@@ -1,0 +1,225 @@
+/* Estructura básica */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin-top: 60px; /* Para compensar el header fijo */
+}
+
+/* Contenedor principal */
+.formulario-login {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto; /* Cambiado de 4rem auto */
+    padding: 3rem;
+    background-color: var(--texto-claro);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(60, 24, 16, 0.1);
+}
+
+/* Estilos para el formulario de login */
+.form-grupo {
+    margin-bottom: 1.8rem;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--color-primario);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.form-grupo input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--color-acento);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.mensaje-error {
+    color: #cf222e;
+    margin: 1rem 0;
+}
+
+/* Sección de usuario logueado */
+.usuario-logueado {
+    text-align: center;
+}
+
+.usuario-logueado h2 {
+    color: var(--color-primario);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-family: "Playfair Display", serif;
+}
+
+.bienvenida {
+    font-size: 1.2rem;
+    color: #b7c1d5;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de reservas */
+.mis-reservas {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow-x: auto; /* Para tablas responsivas */
+}
+
+.mis-reservas h3 {
+    color: var(--color-primario);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Tabla de reservas */
+.tabla-reservas {
+    width: 100%;
+    min-width: 600px; /* Ancho mínimo para evitar compresión */
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+}
+
+.tabla-reservas th,
+.tabla-reservas td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-acento);
+}
+
+.tabla-reservas th {
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.tabla-reservas tr:hover {
+    background-color: #f8f9fa;
+}
+
+.tabla-reservas td {
+    font-size: 1rem;
+    color: var(--texto-oscuro);
+}
+
+/* Estados de las reservas */
+.estado-pendiente { 
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.estado-confirmada { 
+    color: #10b981;
+    font-weight: 600;
+}
+
+.estado-cancelada { 
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* Mensaje cuando no hay reservas */
+.sin-reservas {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Botones */
+.boton {
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+}
+
+.boton:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+.boton-secundario {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-acento);
+    color: var(--color-primario);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+.form-logout {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Pie de página */
+.pie-pagina {
+    margin-top: auto;
+    width: 100%;
+    background-color: var(--color-primario);
+    color: var(--texto-claro);
+    padding: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        margin-top: 80px; /* Ajuste para móviles */
+    }
+
+    .formulario-login {
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .mis-reservas {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .tabla-reservas {
+        font-size: 0.9rem;
+    }
+
+    .tabla-reservas th,
+    .tabla-reservas td {
+        padding: 0.8rem;
+    }
+}
+

@@ -1,0 +1,517 @@
+/* Variables globales */
+:root {
+    --color-primario: #3c1810;    
+    --color-secundario: #a67c52;  
+    --color-acento: #d4b08c;     
+    --texto-claro: #ffffff;       
+    --texto-oscuro: #2d1309;        
+    --fondo: #f5f0eb;       
+}
+
+/* Estilos comunes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--texto-oscuro);
+    background-color: var(--fondo);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Encabezado */
+.encabezado {
+    background-color: var(--color-primario);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icono-logotipo {
+    width: 30px;
+    height: 30px;
+}
+
+.logotipo h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    color: var(--texto-claro);
+}
+
+h2:hover{
+    cursor: default;
+}
+
+.subrayado{
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Mantiene el color original del texto */
+  }
+
+/* Navegación */
+.navegacion ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navegacion a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.navegacion a:hover {
+    color: var(--color-acento);
+}
+
+.navegacion a.activo {
+    color: var(--color-acento);
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 0.2rem;
+}
+
+/* Botón menú hamburguesa - inicialmente oculto */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--texto-claro);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Main sections */
+main {
+    margin-top: 6rem;
+}
+
+/* Sección bienvenida */
+.bienvenida {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(60, 24, 16, 0.7),
+        rgba(60, 24, 16, 0.5)
+    ),
+    url("../img/lugarMasaje.jpg") no-repeat center/cover;
+    border-radius: 15px;
+    margin: 0 1rem;
+    color: var(--texto-claro);
+    animation: fadeIn 1s ease forwards;
+}
+
+.bienvenida h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: var(--texto-claro);
+    margin-bottom: 1.5rem;
+}
+
+.bienvenida p {
+    font-size: 1.1rem;
+    color: #b7c1d5;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background-color: var(--color-secundario);
+    color: var(--texto-claro);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+/* Sección sobre nosotros */
+.sobre-nosotros {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--texto-claro);
+    border-radius: 15px;
+    margin: 2rem 1rem;
+    box-shadow: 0 5px 20px rgba(60, 24, 16, 0.1);
+}
+
+.sobre-nosotros h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+}
+
+.sobre-nosotros p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(216, 167, 177, 0.2);
+}
+
+.sobre-nosotros img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    margin: 2rem 0;
+    transition: transform 0.3s ease;
+}
+
+.sobre-nosotros img:hover {
+    transform: scale(1.02);
+}
+
+/* Sección de Paquetes Vista Previa (index.html) */
+.vista-paquetes {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--texto-claro);
+    border-radius: 15px;
+    margin: 2rem 1rem;
+    box-shadow: 0 5px 20px rgba(216, 167, 177, 0.1);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.vista-paquetes h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+}
+
+.rejilla-paquetes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.paquete {
+    background-color: var(--fondo);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(216, 167, 177, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paquete:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(216, 167, 177, 0.3);
+}
+
+.vista-paquetes .paquete h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.vista-paquetes .paquete p {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+    margin: 1rem 0;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background-color: var(--color-secundario);
+    color: var(--texto-claro);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    
+}
+
+.boton:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+/* Sección de Promociones */
+.promociones {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--fondo);
+}
+
+.promociones h2 {
+    color: var(--color-primario);
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.rejilla-promociones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promocion {
+    background-color: var(--texto-claro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(60, 24, 16, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.promocion:hover {
+    transform: translateY(-5px);
+}
+
+.etiqueta-oferta {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ef4444;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.precio-promocion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.valoracion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estrellas {
+    color: #fbbf24;
+    font-size: 1.2rem;
+}
+
+.numero {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .rejilla-promociones {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Botón WhatsApp */
+.boton-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #128b36;
+    padding: 0.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    height: 60px;
+}
+
+.boton-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.icono-whatsapp {
+    width: 30px;
+    height: 30px;
+}
+
+/* Pie de página */
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--texto-claro);
+    padding: 2rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+.contenido-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.info-footer {
+    text-align: center;
+}
+
+.enlaces-sociales {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--texto-claro);
+    transition: transform 0.3s ease;
+    padding: 8px;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.social-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .contenido-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .enlaces-sociales {
+        margin-top: 1rem;
+    }
+
+    .footer-content {
+        gap: 1rem;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navegacion {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-primario);
+        padding: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navegacion.active {
+        right: 0;
+    }
+
+    .navegacion ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 4rem;
+    }
+
+    .navegacion a {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustar el header para el botón de menú */
+    .encabezado {
+        padding: 1rem;
+    }
+
+    .logotipo h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para mensaje de error */
+.error-mensaje {
+    background-color: var(--texto-claro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(60, 24, 16, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.error-mensaje h2 {
+    color: var(--color-primario);
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.error-mensaje p {
+    color: #666;
+    font-size: 1.1rem;
+}

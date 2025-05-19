@@ -1,0 +1,110 @@
+
+/* Contenedor principal de paquetes */
+.paquetes {
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: var(--texto-claro);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(60, 24, 16, 0.1);
+    margin: 6rem 1rem 2rem 1rem;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Título principal */
+.paquetes h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    color: var(--color-primario);
+    margin-bottom: 2.5rem;
+}
+
+/* Cuadrícula de paquetes */
+.rejilla-paquetes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* Tarjeta individual de paquete */
+.paquete {
+    background-color: var(--fondo);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(60, 24, 16, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en tarjeta */
+.paquete:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(60, 24, 16, 0.3);
+}
+
+/* Título de paquete */
+.paquete h2 {
+    color: var(--color-primario);
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+/* Descripción de paquete */
+.paquete p {
+    color: var(--texto-oscuro);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Precio */
+.precio {
+    color: var(--color-secundario);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1.2rem 0;
+}
+
+/* Botón de acción */
+.boton {
+    padding: 0.8rem 1.8rem;
+    background-color: var(--color-secundario);
+    color: var(--texto-claro);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en botón */
+.boton:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(216, 167, 177, 0.2);
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    margin: 2rem 0;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+.icono-whatsapp {
+    width: 30px;
+    height: 30px;
+}

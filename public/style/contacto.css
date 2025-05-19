@@ -1,0 +1,127 @@
+/* Estructura básica */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* Estilos específicos de contacto */
+.contacto {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--texto-claro);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(60, 24, 16, 0.1);
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 1s ease forwards;
+    margin: 0 auto; /* Cambiado de margin: 8rem auto 3rem */
+}
+
+.contacto h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 5vw, 2.8rem); /* Tamaño de fuente responsive */
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+}
+
+.contacto p {
+    font-size: clamp(1rem, 3vw, 1.1rem); /* Tamaño de fuente responsive */
+    color: var(--texto-oscuro);
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.info-contacto {
+    margin: 2rem auto;
+    max-width: 400px;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.info-contacto p {
+    margin: 1.2rem 0;
+    color: var(--texto-oscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-contacto strong {
+    color: var(--color-primario);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.info-contacto a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-word; /* Para URLs largas */
+}
+
+.info-contacto a:hover {
+    color: var(--color-primario);
+}
+
+/* Botón */
+.boton {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background-color: var(--color-secundario);
+    color: var(--texto-claro);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: auto;
+    min-width: 200px;
+    max-width: 100%;
+}
+
+.boton:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    .contacto {
+        padding: 3rem 1.5rem;
+    }
+
+    .info-contacto {
+        padding: 0;
+    }
+
+    .info-contacto p {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contacto {
+        padding: 2rem 1rem;
+        width: 95%;
+    }
+
+    .boton {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 80%;
+    }
+}

@@ -1,0 +1,283 @@
+.contenedor-admin {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.tabla-reservas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.tabla-reservas th,
+.tabla-reservas td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-reservas th {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.estado-pendiente { color: #f59e0b; }
+.estado-confirmada { color: #10b981; }
+.estado-cancelada { color: #ef4444; }
+
+select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.mensaje-exito {
+    background-color: #10b981;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.mensaje-error {
+    background-color: #ef4444;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.acciones-reserva {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.form-estado {
+    flex: 1;
+}
+
+.boton-eliminar {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-eliminar:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* Estilos para el mensaje de confirmación de eliminación */
+.mensaje-deleted {
+    background-color: #10b981;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.seccion-paquetes {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.seccion-paquetes h2 {
+    color: var(--color-primario);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.boton-crear {
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.boton-crear:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-contenido {
+    position: relative;
+    background-color: white;
+    margin: 5% auto;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.modal-contenido h3 {
+    color: var(--color-primario);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.cerrar {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+    color: var(--color-secundario);
+}
+
+.form-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--color-primario);
+    font-weight: 500;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--color-acento);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-grupo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+.form-grupo input[type="file"] {
+    padding: 0.8rem;
+    border: 2px dashed var(--color-acento);
+    background-color: #f8f9fa;
+}
+
+.form-grupo input[type="url"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--color-acento);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-grupo input[type="url"]:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+.helper-text {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+.form-grupo input[type="url"]:invalid {
+    border-color: #ef4444;
+}
+
+.lista-paquetes {
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+/* Estilos para la tabla de paquetes */
+.tabla-paquetes {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-paquetes th,
+.tabla-paquetes td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-acento);
+    vertical-align: middle; /* Añadido para alinear verticalmente */
+}
+
+.tabla-paquetes th {
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: 500;
+}
+
+/* Ajustes específicos para la columna de acciones */
+.acciones {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    align-items: center; /* Centra verticalmente los botones */
+    min-width: 100px; /* Asegura un ancho mínimo */
+}
+
+.imagen-miniatura {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block; /* Asegura que la imagen se comporte como bloque */
+}
+
+/* Estilos para los botones de acción */
+.boton-editar,
+.boton-eliminar {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex; /* Mejor alineación de los íconos */
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Ancho fijo para los botones */
+    height: 35px; /* Altura fija para los botones */
+}
