@@ -107,7 +107,7 @@ $reservas = $gestionReserva->obtenerReservas();
                                                   onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');">
                                                 <input type="hidden" name="id_reserva" value="<?php echo $reserva['id_reserva']; ?>">
                                                 <button type="submit" class="boton-eliminar">
-                                                    <i class="fas fa-trash"></i> Eliminar
+                                                    <i class="fas fa-trash"></i>
                                                 </button>
                                             </form>
                                         </div>

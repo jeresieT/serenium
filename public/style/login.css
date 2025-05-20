@@ -52,6 +52,18 @@ main {
     margin: 1rem 0;
 }
 
+.requisitos-contraseña {
+    color: #cf222e;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.contraseña-valida {
+    color: #10b981;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
 /* Sección de usuario logueado */
 .usuario-logueado {
     text-align: center;

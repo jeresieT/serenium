@@ -8,6 +8,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    // Validación de requisitos de contraseña
+    $errores = [];
+    if (strlen($password) < 8) {
+        $errores[] = "La contraseña debe tener al menos 8 caracteres.";
+    } elseif (!preg_match('/[A-Z]/', $password)) {
+        $errores[] = "Debe contener al menos una letra mayúscula.";
+    } elseif (!preg_match('/[a-z]/', $password)) {
+        $errores[] = "Debe contener al menos una letra minúscula.";
+    } elseif (!preg_match('/[0-9]/', $password)) {
+        $errores[] = "Debe contener al menos un número.";
+    } elseif (!preg_match('/[^A-Za-z0-9]/', $password)) {
+        $errores[] = "Debe contener al menos un caracter especial.";
+    }
+
+    if (!empty($errores)) {
+        $_SESSION['errores_registro'] = $errores;
+        header("Location: ../view/formulario_registro.php?error=3");
+        exit;
+    }
+
     try {
         // Añadir debug
         error_log("Intentando registrar usuario: " . $email);

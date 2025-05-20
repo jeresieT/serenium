@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,13 +45,21 @@
             <h2>Registrate</h2>
             
             <?php
-            if (isset($_GET['error'])) {
-                echo '<p class="mensaje-error">Email ya esta registrado</p>';
-            }
-            // if (isset($_GET['required'])) {
-            //     echo '<p class="mensaje-error">Debes iniciar sesión para hacer una reserva</p>';
-            // }
-            ?>
+// Mostrar mensaje solo si el error es de email
+if (isset($_GET['error']) && $_GET['error'] == 1) {
+    echo '<p class="mensaje-error">Email ya está registrado</p>';
+}
+
+// Mostrar errores de validación de contraseña u otros
+if (isset($_SESSION['errores_registro'])) {
+    echo '<div class="mensaje-error">';
+    foreach ($_SESSION['errores_registro'] as $err) {
+        echo htmlspecialchars($err) . "<br>";
+    }
+    echo '</div>';
+    unset($_SESSION['errores_registro']);
+}
+?>
 
             <form action="../controller/procesar_registro.php" method="POST">
                 <div class="form-grupo">
@@ -68,7 +79,8 @@
 
                 <div class="form-grupo">
                     <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="contraseña" name="password" required>
+                    <div id="password-feedback"></div>
                 </div>
 
                 <button type="submit" class="boton">Registrarme</button>
@@ -77,5 +89,6 @@
     </main>
 
     <?php include_once __DIR__ . '/templates/footer.php'; ?>
+    <script src="../../public/js/validacionContraseña.js"></script>
 </body>
 </html>

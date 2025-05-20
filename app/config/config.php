@@ -2,11 +2,17 @@
 
 //lo pongo en una constante y lo guardo en "variables"
 //nombre de la constannte -> valor de la constante
-define('DB_HOST', 'bbdd.aronacoffes.cat');
-define('DB_USER', 'ddb253701');
-define('DB_PASS', 'Jeresietorres.alum@insestatut25
-');
-define('DB_NAME', 'ddb253701');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'serenium');
+
+// define('DB_HOST', 'bbdd.aronacoffes.cat');
+// define('DB_USER', 'ddb253701');
+// define('DB_PASS', 'Jeresietorres.alum@insestatut25
+// ');
+// define('DB_NAME', 'ddb253701');
+
 
 try {
     // Conexión a la base de datos
