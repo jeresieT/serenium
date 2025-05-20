@@ -19,6 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fecha = $_POST['fecha'] ?? '';
     $id_usuario = $_SESSION['usuario_id'] ?? null;
     $paquete = $_POST['paquete'] ?? '';
+    $telefono = $_POST['telefono'];
+
+    // Validar teléfono
+    if (!preg_match('/^[0-9]{9}$/', $telefono)) {
+        $_SESSION['error'] = "El número de teléfono debe tener 9 dígitos";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit;
+    }
 
     // Validar que tengamos todos los datos necesarios
     if (!$fecha || !$id_usuario || !$paquete) {

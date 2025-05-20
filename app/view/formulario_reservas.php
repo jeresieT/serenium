@@ -90,8 +90,14 @@ $precio = $_GET['precio'] ?? '';
 
                 <div class="form-grupo">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" 
-                           value="<?php echo htmlspecialchars($datosUsuario['telefono'] ?? ''); ?>" required>
+                    <input type="tel" 
+                           id="telefono" 
+                           name="telefono" 
+                           pattern="[0-9]{9}"
+                           title="Introduce un número de teléfono válido de 9 dígitos"
+                           value="<?php echo htmlspecialchars($datosUsuario['telefono'] ?? ''); ?>" 
+                           required>
+                    <span class="mensaje-error" id="telefono-error"></span>
                 </div>
 
 
@@ -113,9 +119,8 @@ $precio = $_GET['precio'] ?? '';
     </main>
 
     <?php include_once __DIR__ . '/templates/footer.php'; ?>
-    
-    <script src="../../public/js/formularioReserva.js"></script>
-
+<script src="../../public/js/formularioReserva.js"></script>
+<script src="../../public/js/validacionTelefono.js"></script>
 </body>
 </html>
 
